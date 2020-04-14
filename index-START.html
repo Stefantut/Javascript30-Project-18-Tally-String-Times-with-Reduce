@@ -5,6 +5,15 @@
     <title>Videos</title>
   </head>
   <body>
+    <style>
+      .videos {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .videos li {
+        list-style-type: none;
+      }
+    </style>
     <ul class="videos">
       <li data-time="5:43">
         Video 1
@@ -207,6 +216,11 @@
       const totalTime = document.querySelector(".result");
       totalTime.innerHTML =
         twoDigits(hours) + ":" + twoDigits(mins) + ":" + twoDigits(secondsLeft);
+
+      const time = timeNodes.forEach((element) => {
+        const DataTime = element.dataset.time;
+        element.innerHTML = element.textContent + " - " + DataTime;
+      });
     </script>
   </body>
 </html>
