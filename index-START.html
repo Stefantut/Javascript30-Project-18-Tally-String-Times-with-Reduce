@@ -9,9 +9,23 @@
       .videos {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
+        padding: 0;
+        border: 2px solid indigo;
       }
       .videos li {
         list-style-type: none;
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        border: 1px solid firebrick;
+      }
+      h3 {
+        display: flex;
+        justify-content: center;
+      }
+      h3 .result {
+        color: indianred;
+        margin-left: 5px;
       }
     </style>
     <ul class="videos">
@@ -217,6 +231,7 @@
       totalTime.innerHTML =
         twoDigits(hours) + ":" + twoDigits(mins) + ":" + twoDigits(secondsLeft);
 
+      //Display the time for each video
       const time = timeNodes.forEach((element) => {
         const DataTime = element.dataset.time;
         element.innerHTML = element.textContent + " - " + DataTime;
